@@ -1,0 +1,16 @@
+image:
+  repository: registry.digitalocean.com/omega/node-frontend-staging
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  hosts:
+    - host: staging.winecharts.com
+      paths:
+        - path: /
+  tls:
+    - secretName: tls-key-stage
+      hosts:
+        - staging.winecharts.com

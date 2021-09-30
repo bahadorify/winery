@@ -1,0 +1,52 @@
+// FONT FAMILY
+$font-fallback: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
+$font-family-base: 'Source-Sanse-Pro', #{$font-fallback};
+
+/**
+FONT SIZES
+*/
+$rootFontSize: 16px;
+
+// variable font mobile (defualt 16px)
+$font-xs: 0.8rem; // 12.8px
+$font-sm: 0.875rem; // 14px
+$font-md: 1rem; // 16px
+$font-lg: 1.125rem; // 18px
+$font-xl: 1.25rem; // 20px
+
+$lineHeight: 1.24rem; // line height in rems
+$marginBottom: 0.64rem; // margin bottom in rems
+
+/**
+COLORS
+*/
+$lightGrey: #f8f8f8;
+$black: rgb(34, 34, 34);
+$red: rgb(214, 0, 0);
+$turqoise: #13a3b8;
+//---
+// Brand colors
+$bDarkGreen: #0c393b;
+$bGreen: #1c989d;
+$bLightGreen: #d1eeef;
+$bRed: #d60000;
+$bLightRed: #f6dbdf;
+$bGrey: #dce2e2;
+$bMidGrey: #f0f0f0;
+$bLightGrey: #fafafa;
+//---
+// Text colors
+$textPrimary: #082d2f;
+$textSecondary: #0f474a;
+$textTertiary: #76898a;
+
+/**
+SIZES &
+BREAKPOINTS
+*/
+$bp-mobile: 640px;
+
+$width: 85%;
+$maxWidth: 1216px;

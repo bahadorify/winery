@@ -1,0 +1,35 @@
+version: '3'
+services:
+  node-front:
+    build:
+      context: ci/node-frontend
+    environment:
+      - GQL_ENDPOINT=http://frontend-back:4000/graphql
+    container_name: frontend-front
+    depends_on:
+      - node-back
+    ports:
+      - '3000:3000'
+
+  node-back:
+    build:
+      context: ci/node-backend
+    environment:
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_HOST=mongo
+      - BACKEND_PORT=4000
+    depends_on:
+      - mongo
+    container_name: frontend-back
+
+  mongo:
+    image: mongo
+    container_name: mongo-main
+    environment:
+      - MONGO_INITDB_DATABASE=wines
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'

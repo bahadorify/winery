@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: spider
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: spider
+        image: registry.digitalocean.com/omega/spider:latest
+        env:
+          - name: MONGO_PASSWORD
+            value: "root"
+          - name: MONGO_HOST
+            value: "mongo-mongodb"
+        args: ["--categories", "rødvin"]
+      restartPolicy: Never
+  backoffLimit: 4

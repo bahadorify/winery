@@ -1,0 +1,179 @@
+@import '@/assets/sass/_variables.scss';
+
+html {
+  font-family: $font-family-base;
+  font-size: $rootFontSize;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  color: $black;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.container {
+  width: 100%;
+  max-width: $maxWidth;
+  margin: 0 auto 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.body-internal {
+  margin: 0 auto;
+}
+.spacer {
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: $maxWidth;
+  margin: auto;
+  justify-content: center;
+  padding: 0 0.625rem 2rem;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $black;
+  }
+}
+
+h1 {
+  font-size: 2.1rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: $font-xl;
+  font-weight: bold;
+}
+
+p,
+li {
+  font-weight: 300;
+}
+
+.bank-container {
+  width: 100%;
+  max-width: $maxWidth;
+}
+// :not(.answer) .content {
+//   padding-bottom: 3rem;
+// }
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 1rem 0;
+  }
+  h3 {
+    font-weight: 300;
+  }
+  a {
+    color: $red;
+  }
+  img {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  ul {
+    list-style: disc inside;
+    margin: 0.8rem 0;
+  }
+  ol {
+    list-style: decimal inside;
+    margin: 0.8rem 0;
+  }
+}
+
+.accordion-content {
+  h2 {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.btn-default {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  & > * {
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+}
+
+.btn-red {
+  @extend .btn-default;
+  background-color: $red;
+  color: white;
+}
+
+.btn-grey {
+  @extend .btn-default;
+  background-color: $bGrey;
+  color: $textPrimary;
+}
+
+.btn-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .spacer {
+    margin-bottom: 3rem;
+  }
+}
